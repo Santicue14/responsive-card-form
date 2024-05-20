@@ -1,13 +1,91 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url("fonts/SpaceGrotesk-VariableFont_wght.ttf") format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.front-card {
+    background-image: url('./images/bg-card-front.png');
+    position: absolute;
+    top: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 230px;
+    width: 320px;
+    border-radius: 20px;
+    z-index: 20;
+}
+
+.thank-you{
+    margin-top: 20rem;
+}
+.back-card {
+    background-image: url('./images/bg-card-back.png');
+    position: absolute;
+    right: 20px;
+    height: 230px;
+    width: 320px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+
+    & p {
+        top: 6.15rem;
+        /*8.3rem (lg)*/
+    }
+}
+
+form {
+    margin-top: 320px;
+    & label {
+        @apply block uppercase tracking-wider text-Verydarkviolet mb-2 text-sm;
+    }
+
+    & input{
+        @apply border-2 border-Lightgrayishviolet py-2 px-4 rounded outline-none w-full;
+    }
+}
+@media (min-width: 768px) {
+    .front-card,
+    .back-card {
+        
+        height: 300px;
+        width: 500px;
+        border-radius: 20px;
+    }
+    .back-card p {
+        top: 8.3rem;
+    }
+    form{
+        margin-top: 400px;
+        margin-left: 100px;
+    }
+    .thank-you{
+        margin-top: 400px;
+    }
+}
+@media (min-width: 1024px) {
+    .front-card, .back-card{
+        position: relative;
+    }
+    .front-card{
+        top: 50px;
+    }
+    .back-card{
+        right: 0;
+    }
+    form{
+        margin-top: 0px;
+    }
+    .thank-you{
+        margin-top: 0;
+    }
+}
+body {
+    font-family: 'Space Grotesk', sans-serif;
 }

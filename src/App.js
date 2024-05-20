@@ -142,7 +142,7 @@ function ThankYou({ setConfirmed }) {
   return (
     <>
       <div className="thank-you flex flex-col items-center justify-center lg:h-screen max-w-lg mx-auto mt-8">
-        <img src={check} alt="Card Added Check Image" className='block mx-auto' />
+          <img src={check} alt="Thanks Message Check" className='block mx-auto' />
         <h1 className='text-Verydarkviolet text-3xl mb-6 uppercase text-center my-6'>Thank you!</h1>
         <p className='text-Darkgrayishviolet text-center '>We've added your card details</p>
         <button onClick={() => setConfirmed(false)} className='bg-Verydarkviolet py-3 px-6 text-White rounded shadow text-base tracking-wide lg:text-lg hover:bg-White border hover:border-Verydarkviolet hover:text-Verydarkviolet transition duration-[0.3s] block mx-auto mt-10 w-full'>Continue</button>
